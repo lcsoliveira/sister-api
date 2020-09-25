@@ -1,0 +1,11 @@
+{
+  "editor.formatOnSave": true,
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.triggerExpansionOnTab": true,
+  "files.associations": {
+    "*.yamlt": "yaml"
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  }
+}
