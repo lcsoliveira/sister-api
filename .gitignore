@@ -1,7 +1,7 @@
 # Don't check auto-generated stuff into git
 coverage
 build
-node_modules
+node_modules/**/*
 stats.json
 db2_licenses
 sessions
@@ -31,3 +31,15 @@ npm-debug.log
 #Test of JSON File
 server/taa-results
 
+
+.expo/*
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+web-report/
+.env
