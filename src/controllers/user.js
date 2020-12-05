@@ -1,3 +1,13 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable object-shorthand */
+/* eslint-disable prefer-destructuring */
+/* eslint-disable consistent-return */
+/* eslint-disable prefer-const */
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable spaced-comment */
+/* eslint-disable prefer-template */
+/* eslint-disable prettier/prettier */
+
 const User = require('../models/user');
 const {uploader, sendEmail} = require('../utils/index');
 
@@ -38,7 +48,7 @@ exports.store = async (req, res) => {
         let to = user.email;
         let from = process.env.FROM_EMAIL;
         let link = "http://" + req.headers.host + "/api/auth/reset/" + user.resetPasswordToken;
-        let html = `<p>Hi ${user.username}<p><br><p>A new account has been created for you on ${domain}. Please click on the following <a href="${link}">link</a> to set your password and login.</p> 
+        let html = `<p>Hi ${user.username}<p><br><p>A new account has been created for you on ${domain}. Please click on the following <a href="${link}">link</a> to set your password and login.</p>
                   <br><p>If you did not request this, please ignore this email.</p>`
 
         await sendEmail({to, from, subject, html});
@@ -120,8 +130,10 @@ exports.contacts = async function (req, res) {
         // if (contacts.length < 3) return res.status(411).json({message: "It must has three contatcs, please try again"});
 
         const user = await User.findByIdAndUpdate(id, {$set: {contacts: contacts} });
+        const fullUser = await User.findById(id);
 
-        return res.status(200).json({user, message: 'User has been updated'});
+
+        return res.status(200).json({fullUser, message: 'User has been updated'});
 
     } catch (error) {
         res.status(500).json({message: error.message});

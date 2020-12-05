@@ -50,4 +50,5 @@ require('./routes/index')(app);
 
 
 //=== 5 - START SERVER
-app.listen(PORT, () => console.log('Server running on http://localhost:'+PORT+'/'));
+// eslint-disable-next-line prettier/prettier
+app.listen(PORT, () => console.log("Server running on PORT = ", PORT));
